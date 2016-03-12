@@ -7,6 +7,7 @@ import Default from './modules/Default.jsx';
 FlowRouter.route('/', {
   name: 'default',
   action: function() {
+    Meteor.call('unwaitForVideo');
     mount(Layout, {content: () => (<Default /> )});
   },
 });
@@ -15,7 +16,9 @@ import GettingReady from './modules/GettingReady.jsx';
 FlowRouter.route('/video/:_id', {
   name: 'video',
   action: function() {
-    mount(Layout, {content: () => (<GettingReady _id={FlowRouter.getParam('_id')}/> )});
+    const videoId = FlowRouter.getParam('_id');
+    Meteor.call('waitForVideo', videoId);
+    mount(Layout, {content: () => (<GettingReady _id={videoId}/> )});
   },
 });
 

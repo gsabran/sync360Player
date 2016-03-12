@@ -4,6 +4,7 @@
 
 import React, {PropTypes, Component} from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Account from './Account.jsx';
 
 injectTapEventPlugin(); // like FastClick
 
@@ -22,6 +23,9 @@ export default class Layout extends Component {
      * }
      */
     return <div>
+      <header>
+        <Account />
+      </header>
       {content()}
     </div>
   }

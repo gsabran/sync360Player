@@ -4,6 +4,8 @@ accounts-google@1.0.6
 accounts-oauth@1.1.9-modules.8
 accounts-password@1.1.5-modules.8
 accounts-twitter@1.0.6
+accounts-ui@1.1.6
+accounts-ui-unstyled@1.1.9-modules.8
 allow-deny@1.0.1-modules.8
 arillo:flow-router-helpers@0.5.1
 autoupdate@1.2.5-modules.8
@@ -48,6 +50,7 @@ jsx@0.2.4
 kadira:flow-router@2.10.1
 kadira:react-layout@1.5.3
 launch-screen@1.0.5-modules.8
+less@2.5.2-modules.8
 livedata@1.0.15
 localstorage@1.0.6-modules.8
 logging@1.0.9-modules.8

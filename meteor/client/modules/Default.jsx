@@ -18,7 +18,7 @@ export default class Default extends Component {
     return <div>
       I'm done with react :)
       {this.data.videos.map((video) => {
-        return <VideoPreview {...video} />
+        return <VideoPreview {...video} key={video._id}/>
       })}
     </div>
   }
@@ -28,7 +28,7 @@ reactMixin(Default.prototype, ReactMeteorData);
 class VideoPreview extends Component {
   render() {
     const {_id, preview, title} = this.props;
-    return <div>
+    return <div className="preview">
       <a href={flowHelpers.pathFor( 'video', {_id} )}>
         <img src={preview} />
         <div className="title">{title}</div>
