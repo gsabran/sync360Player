@@ -36,8 +36,8 @@ class userGettingReady extends Component {
     const {name, picture, status} = this.props;
     return <div>
       <img src={picture}/>
-      <div className="name">{name}</div>
-      <div className="status">{status}</div>
+      <div className="name" key={0}>{name}</div>
+      <div className="status" key={1}>{status}</div>
     </div>
   }
 }
