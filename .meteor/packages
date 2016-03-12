@@ -21,3 +21,8 @@ insecure                # Allow all DB writes from clients (for prototyping)
 kadira:flow-router
 arillo:flow-router-helpers
 kadira:react-layout
+
+accounts-password
+accounts-google
+accounts-facebook
+accounts-twitter
