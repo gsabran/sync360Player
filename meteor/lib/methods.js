@@ -3,13 +3,10 @@ Meteor.methods({
 	Users.update({_id: Meteor.userId()}, {$set: {rotation:rotation}})
   },
   waitForVideo: function(videoId) {
-    Users.update({_id: Meteor.userId()}, {$set: {status: 'waiting', currentVideo: videoId}})
+    Users.update({_id: Meteor.userId()}, {$set: {isReady: false, currentVideo: videoId}})
   },
   unwaitForVideo: function() {
-    Users.update({_id: Meteor.userId()}, {$unset: {status: 1, currentVideo: 1}});
-  },
-  unwaitForVideo: function() {
-    Users.update({_id: Meteor.userId()}, {$unset: {status: 1, currentVideo: 1}});
+    Users.update({_id: Meteor.userId()}, {$unset: {isReady: 1, currentVideo: 1}});
   },
   videoStarts: function(videoId) {
     Videos.update({_id: videoId}, {$set: {isPlaying: true}});

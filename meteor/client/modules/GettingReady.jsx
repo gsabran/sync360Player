@@ -26,6 +26,7 @@ export default class GettingReady extends Component {
     let allAreReady = true;
     
     const mainContent = () => {
+      console.log('video', video);
       if (video && video.isPlaying) {
         {/* Video thing goes here */}
       } else {
@@ -40,7 +41,9 @@ export default class GettingReady extends Component {
     }
 
     return <div className="videoContainer">
-        <video src={video && video.url}/>
+      <video>
+        <source src={video && video.url} type="video/mp4"/>
+      </video>
         {mainContent()}
       </div>
   }
