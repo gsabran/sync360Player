@@ -4,8 +4,8 @@
     {
       "path": ".",
       "folder_exclude_patterns": [
-        ".meteor/local",
-        "node_modules",
+          "meteor/.meteor/local",
+          "meteor/node_modules",
         ],
       "tab_size": 2,
       "translate_tabs_to_spaces": true,
