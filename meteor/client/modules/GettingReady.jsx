@@ -19,11 +19,18 @@ export default class GettingReady extends Component {
   }
   render() {
     const users = this.data.users;
+    let allAreReady = true;
     return <div>
       {users.map((user) => {
+        allAreReady = allAreReady && user.isReady;
         return <UserGettingReady {...user} key={user._id}/>
       })}
+      {allAreReady && <div className="go" onClick={this.startVideo.bind(this)}>Go!</div>}
     </div>
+  }
+  startVideo() {
+    //TODO
+    window.alert('should start video');
   }
 }
 reactMixin(GettingReady.prototype, ReactMeteorData);
@@ -33,11 +40,19 @@ reactMixin(GettingReady.prototype, ReactMeteorData);
  */
 class UserGettingReady extends Component {
   render() {
-    const {name, picture, status, emails} = this.props;
+    const {name, picture, isReady, emails, _id} = this.props;
+
     return <div>
       <img src={picture}/>
       <div className="name" key={0}>{emails[0].address}</div>
-      <div className="status" key={1}>{status}</div>
+      <div className="status" key={1}>{isReady ? 'ready' : 'not ready'}</div>
+      {_id === Meteor.userId() &&
+        <div className="button" key={2} onClick={this.changeReadyState.bind(this)}>{isReady ? 'Wait, I\'m not ready!' : 'I\'m ready to go'}</div>
+      }
     </div>
+  }
+  changeReadyState() {
+    console.log('changeReadyState');
+    Meteor.call('changeReadyState', this.props._id);
   }
 }
