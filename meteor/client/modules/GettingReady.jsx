@@ -15,26 +15,34 @@ export default class GettingReady extends Component {
   getMeteorData() {
     const videoId = this.props._id;
     Meteor.subscribe('video', videoId);
-    const video = Videos.findOne(videoId);
-    if (video && video.isPlaying) {
-      FlowRouter.go('videoPlayer', {_id: videoId});
-      return {users: []};
-    }
     Meteor.subscribe('usersOnVideo', videoId);
     return {
       users: Users.find({currentVideo: videoId}).fetch(),
+      video: Videos.findOne(videoId),
     }
   }
   render() {
-    const users = this.data.users;
+    const {users, video} = this.data;
     let allAreReady = true;
-    return <div>
-      {users.map((user) => {
-        allAreReady = allAreReady && user.isReady;
-        return <UserGettingReady {...user} key={user._id}/>
-      })}
-      {allAreReady && <div className="go" onClick={this.startVideo.bind(this)}>Go!</div>}
-    </div>
+    
+    const mainContent = () => {
+      if (video && video.isPlaying) {
+        {/* Video thing goes here */}
+      } else {
+        return <div>
+          {users.map((user) => {
+            allAreReady = allAreReady && user.isReady;
+            return <UserGettingReady {...user} key={user._id}/>
+          })}
+          {allAreReady && <div className="go" onClick={this.startVideo.bind(this)}>Go!</div>}
+        </div>
+      }
+    }
+
+    return <div className="videoContainer">
+        <video src={video && video.url}/>
+        {mainContent()}
+      </div>
   }
   startVideo() {
     Meteor.call('videoStarts', this.props._id);
