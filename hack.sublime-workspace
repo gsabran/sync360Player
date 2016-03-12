@@ -1,0 +1,1344 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"liked",
+				"likedBy"
+			],
+			[
+				"A",
+				"Analytics"
+			],
+			[
+				"act",
+				"actor_id"
+			],
+			[
+				"ac",
+				"actor_data"
+			],
+			[
+				"actor",
+				"actor_data"
+			],
+			[
+				"get",
+				"getNotificationFilter"
+			],
+			[
+				"ta",
+				"target_id"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"re",
+				"reply"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"is",
+				"isTypingInThread"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"pr",
+				"profile"
+			],
+			[
+				"pro",
+				"profile"
+			],
+			[
+				"Commet",
+				"CommentReplies"
+			],
+			[
+				"comment",
+				"comment_id"
+			],
+			[
+				"show",
+				"showReplies"
+			],
+			[
+				"user",
+				"userAgent"
+			],
+			[
+				"co",
+				"comment"
+			],
+			[
+				"tas",
+				"task"
+			],
+			[
+				"or",
+				"original"
+			],
+			[
+				"o",
+				"originalFunction"
+			],
+			[
+				"arg",
+				"arguments"
+			],
+			[
+				"data",
+				"data-webgl"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"b",
+				"bgSrc"
+			],
+			[
+				"_",
+				"_getContext"
+			],
+			[
+				"Rea",
+				"REAL_TITLE"
+			],
+			[
+				"Re",
+				"REAL_TITLE"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"notif",
+				"notification"
+			],
+			[
+				"remove",
+				"removeNotification"
+			],
+			[
+				"acti",
+				"actor_id"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"thu",
+				"thumbnails"
+			],
+			[
+				"thum",
+				"thumbnail"
+			],
+			[
+				"res",
+				"restartVideoServer"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"repos",
+				"reposted"
+			],
+			[
+				"Video",
+				"VideosMetadata"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"default",
+				"defaultBackground"
+			],
+			[
+				"UPL",
+				"UPLOADING"
+			],
+			[
+				"on",
+				"onClick"
+			],
+			[
+				"owner",
+				"owner_id"
+			],
+			[
+				"Reac",
+				"ReactiveVar"
+			],
+			[
+				"owe",
+				"owner_id"
+			],
+			[
+				"u",
+				"user"
+			],
+			[
+				"getPo",
+				"getPostContext"
+			],
+			[
+				"h",
+				"handle"
+			],
+			[
+				"change",
+				"changeVideoQuality"
+			],
+			[
+				"c",
+				"computations"
+			],
+			[
+				"percen",
+				"percentProcessed"
+			],
+			[
+				"per",
+				"percentageUploaded"
+			],
+			[
+				"def",
+				"defaultThumbnail"
+			],
+			[
+				"thm",
+				"thumbnail"
+			],
+			[
+				"read",
+				"readyToPlay"
+			],
+			[
+				"publi",
+				"published"
+			],
+			[
+				"ready",
+				"readyToPlay"
+			],
+			[
+				"me",
+				"meteorData"
+			],
+			[
+				"vi",
+				"view"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"pre",
+				"processingComplete"
+			],
+			[
+				"team",
+				"teamMembers"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"video",
+				"videosFeed"
+			],
+			[
+				"has",
+				"hasVideo"
+			],
+			[
+				"Vide",
+				"video"
+			],
+			[
+				"dev",
+				"deviceInfo"
+			],
+			[
+				"is_",
+				"is_chrome"
+			],
+			[
+				"na",
+				"navigator"
+			],
+			[
+				"R",
+				"ReactiveVar"
+			],
+			[
+				"su",
+				"subscriptionsReady"
+			],
+			[
+				"vide",
+				"videoId"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"be",
+				"best"
+			],
+			[
+				"au",
+				"autorun"
+			],
+			[
+				"new",
+				"newSource"
+			],
+			[
+				"sele",
+				"selectedQuality"
+			],
+			[
+				"atta",
+				"attachVideoCallbacks"
+			],
+			[
+				"background",
+				"backgroundColor"
+			],
+			[
+				"in",
+				"instance"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"ca",
+				"cardboard-message"
+			],
+			[
+				"to",
+				"totalMovement"
+			],
+			[
+				"vec",
+				"vec4"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"li",
+				"listFeed"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"post",
+				"postContext"
+			],
+			[
+				"sub",
+				"subscriptions"
+			],
+			[
+				"t",
+				"token"
+			],
+			[
+				"ke",
+				"keys"
+			],
+			[
+				"th",
+				"thumbnails"
+			],
+			[
+				"de",
+				"defaultIsSet"
+			],
+			[
+				"getB",
+				"getBrowser"
+			],
+			[
+				"f",
+				"find"
+			],
+			[
+				"s",
+				"scope"
+			],
+			[
+				"lastMouse",
+				"lastMouseDown"
+			],
+			[
+				"last",
+				"lastMousePos"
+			],
+			[
+				"run",
+				"runningDrawer"
+			],
+			[
+				"ru",
+				"runningDrawer"
+			],
+			[
+				"v",
+				"video-repost"
+			],
+			[
+				"isF",
+				"isFollowingCreator"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"ob",
+				"observer"
+			],
+			[
+				"vid",
+				"videosExtraData"
+			],
+			[
+				"repost",
+				"repostedBy"
+			],
+			[
+				"tr",
+				"transform"
+			],
+			[
+				"foll",
+				"following-er"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"ow",
+				"owner_id"
+			],
+			[
+				"las",
+				"lastFrameDecodedAt"
+			],
+			[
+				"bes",
+				"bestFrame"
+			],
+			[
+				"curr",
+				"currentFrameTimestamp"
+			],
+			[
+				"fr",
+				"frames"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"oti",
+				"orientation"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".meteor/packages",
+			"settings":
+			{
+				"buffer_size": 1125,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/router.jsx",
+			"settings":
+			{
+				"buffer_size": 334,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 133,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 13,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node_modules/react-mounter/package.json",
+			"settings":
+			{
+				"buffer_size": 2391,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/modules/Layout.jsx",
+			"settings":
+			{
+				"buffer_size": 1333,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 721,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 209.0,
+		"last_filter": "ja",
+		"selected_items":
+		[
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"jacva",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"JAVA",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"she",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"shel",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"jaca",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/guigou/Hackathon",
+		"/Users/guigou/Hackathon/.meteor",
+		"/Users/guigou/Hackathon/client/modules",
+		"/Users/guigou/Hackathon/node_modules/react-mounter",
+		"/Users/guigou/Hackathon/server"
+	],
+	"file_history":
+	[
+		"/Users/guigou/Hackathon/client/modules/Default.jsx",
+		"/Users/guigou/Hackathon/README.md",
+		"/Users/guigou/Hackathon/simple-todos-react.js",
+		"/Users/guigou/Papero/Code/projects/metrics/public/apis/npm.js",
+		"/Users/guigou/Papero/Code/projects/metrics/public/apis/javascript.js",
+		"/Users/guigou/Papero/Code/metta/www/server/methods.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/dev-only/Metrics.jsx",
+		"/Users/guigou/Downloads/tmp.js",
+		"/Users/guigou/Papero/Code/metta/www/lib/methods.js",
+		"/Users/guigou/Papero/Code/metta/www/.deploy/mongo.txt",
+		"/Users/guigou/Papero/Code/metta/www/server/tasks/recentNotifications.js",
+		"/Users/guigou/Papero/Code/metta/www/server/collections.js",
+		"/Users/guigou/Papero/Code/metta/www/server/tasks/taskManager.js",
+		"/Users/guigou/Papero/Code/metta/www/server/tasks/taskRegistration.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-player/VideoComments.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/MainLayout.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/Notifications.jsx",
+		"/Users/guigou/Papero/Code/metta/www/lib/analytics.js",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/router.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-edit/VideoEdit.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/Header.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/utils.js",
+		"/Users/guigou/Papero/Code/metta/www/client/config.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/Like.jsx",
+		"/Users/guigou/Papero/Code/metta/www/packages/360-image-player/client/shared/controls.js",
+		"/Users/guigou/Papero/Code/metta/www/packages/360-image-player/client/videoPlayer/video-controls.js",
+		"/Users/guigou/Papero/Code/metta/www/.gitignore",
+		"/Users/guigou/Papero/Code/metta/www/.meteor/local/build/programs/server/app/app.js",
+		"/Users/guigou/Papero/Code/metta/www/tests/mocha/notificationsMethods.js",
+		"/Users/guigou/Papero/Code/metta/www/package.json",
+		"/Users/guigou/Papero/Code/metta/www/.babelrc",
+		"/Users/guigou/Downloads/tmpp.js",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/errorReporter.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/header.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-player/VideoPlayer.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-player/comments.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/stylesheets/sites/home.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/stylesheets/sites/default.import.less",
+		"/Users/guigou/Papero/Code/metta/www/server/publish.js",
+		"/Users/guigou/Papero/Code/metta/www/server/account.js",
+		"/Users/guigou/Papero/Code/metta/www/server/lib/utils.js",
+		"/Users/guigou/Papero/Code/metta/www/packages/360-image-player/client/shared/player-main.js",
+		"/Users/guigou/Papero/Code/metta/www/packages/utils/client.js",
+		"/Users/guigou/Papero/Code/metta/www/server/picture-reprocess.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-edit/video-edit.import.less",
+		"/Users/guigou/Papero/Code/metta/www/lib/utils.js",
+		"/Users/guigou/Papero/Code/metta/www/server/errorReporter.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-player/video-player.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/static/GetACamera.jsx",
+		"/Users/guigou/Papero/Code/metta/www/lib/collections.js",
+		"/Users/guigou/Papero/Code/metta/www/server/emails/notificationsEmail.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/notifications.import.less",
+		"/Users/guigou/Papero/Code/metta/www/server/startup.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/creator/Preview.jsx",
+		"/Users/guigou/Papero/Code/metta/www/getUsersInfo.txt",
+		"/Users/guigou/Papero/Code/metta/www/packages/meteor-accounts-ui-bootstrap-3/login_buttons_dropdown.html",
+		"/Users/guigou/Papero/Code/metta/www/packages/meteor-accounts-ui-bootstrap-3/accounts_ui.styl",
+		"/Users/guigou/Papero/Code/metta/www/packages/meteor-accounts-ui-bootstrap-3/login_buttons_dropdown.js",
+		"/Users/guigou/Papero/Code/metta/www/packages/meteor-accounts-ui-bootstrap-3/login_buttons_single.js",
+		"/Users/guigou/Papero/Code/metta/www/packages/meteor-accounts-ui-bootstrap-3/login_buttons_single.html",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/Background360.jsx",
+		"/Users/guigou/Papero/Code/metta/www/packages/meteor-accounts-ui-bootstrap-3/login_buttons.html",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/prototypes.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/360-bg.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/mixins.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/creator/Profile.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/like.less",
+		"/Users/guigou/Papero/Code/metta/www/packages/360-image-player/client/shared/webgl.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-feeds/MyVideos.jsx",
+		"/Users/guigou/Papero/Code/metta/www/packages/360-image-player/client/shared/player-standard.js",
+		"/Users/guigou/Papero/Code/metta/www/packages/360-image-player/client/videoPlayer/ogv/ogv-webGLFrameSink.js",
+		"/Users/guigou/Papero/Code/metta/www/server/monitor-video-server.js",
+		"/Users/guigou/Papero/Code/metta/www/client/stylesheets/sites/variables.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/flowHelpers.js",
+		"/Users/guigou/Papero/Code/metta/www/metta.sublime-project",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/Preview.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/main-layout.import.less",
+		"/Users/guigou/Papero/Code/metta/www/server/video-reprocess.js",
+		"/Users/guigou/Papero/Code/metta/www/server/video-processor-router.js",
+		"/Users/guigou/Papero/Code/metta/www/.deploy/mup.json",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-upload/Upload.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-upload/video-upload-helpers.js",
+		"/Users/guigou/Papero/Code/metta/www/.meteor/packages",
+		"/Users/guigou/Papero/Code/projects/metrics/client/modules/MainLayout.jsx",
+		"/Users/guigou/Papero/Code/metta/www/.deploy/Gruntfile.js",
+		"/Users/guigou/Papero/Code/metta/www/.deploy/settup.sh",
+		"/Users/guigou/.bashrc",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-feeds/MapFeed.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-feeds/FeedContainer.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-feeds/VideosFeeds.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-feeds/VideoFeedMixin.jsx",
+		"/Users/guigou/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/guigou/Papero/Code/metta/www/.deploy/.gitignore",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/socketManager.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-upload/video-upload.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/Repost.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/FeedMenu.jsx",
+		"/Users/guigou/Papero/Code/metta/www/tests/jasmine/server/unit/package-stubs.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/preview.less",
+		"/Users/guigou/Papero/Code/metta/www/client/stylesheets/sites/mixins.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/creator/preview.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/creator/PreviewContainer.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/AccountsUI.jsx",
+		"/Users/guigou/Papero/Code/metta/www/.meteor/versions",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/PostHeader.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/RepostHeader.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/constants.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/layout/app-body.import.less",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/BackgroundTracker.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/static/Home.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/layout/PopUpAlert.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/static/ContactUs.jsx",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/creator/userPreview.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/miscelanous/header-background.js",
+		"/Users/guigou/Papero/Code/metta/www/client/lib/router.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/layout/app-body.js",
+		"/Users/guigou/.ssh/known_hosts",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/creator/creator.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/creator/userPreview.html",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/creator/creator.html",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/creator/creator-videos.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/creator/creator-videos.html",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-feeds/CreatorVideos.jsx",
+		"/Users/guigou/Papero/Code/metta/www/node_modules/react-mixin/node_modules/smart-mixin/index.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/miscelanous/360-bg.html",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/miscelanous/360-bg.js",
+		"/Users/guigou/Papero/Code/metta/www/client/templates/feed/types/my-videos/my-videos.js",
+		"/Users/guigou/Papero/Code/metta/www/client/modules/video-miscelanous/ChangeVideoOrder.jsx"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"<current file>",
+			"",
+			"<current file>",
+			"",
+			"<current file>",
+			"",
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Layout",
+			"MainLayout",
+			"Layout",
+			"MainLayout",
+			"window",
+			".notifications",
+			"getDefault();",
+			"getDefault",
+			"[7, 6, 5, 4, 3, 2, 1, 0]",
+			"total",
+			"Total",
+			"total",
+			"comment",
+			"getDefault",
+			"{videos: [], day: day, reposts: [], likes: [], views: [], videosCount: 0, repostsCount: 0, likesCount: 0, viewsCount: 0}",
+			"flagTaskAsDone",
+			"sendEmailNotification",
+			"flagTaskAsDone",
+			"runScheduledTasksWhenNecessary",
+			"redirectPath",
+			"unlikeComment",
+			"likedBy",
+			"currentUserId",
+			"hasLiked",
+			"Meteor.userId()",
+			"hasLiked",
+			"likedBy",
+			"comment",
+			"likedBy",
+			"likedBy: []",
+			"registerEmailNotificationTask",
+			"EMAIL_NOTIFICATION",
+			"sendEmailNotification",
+			"getPrimaryEmail",
+			"analyics.js",
+			"analitycs.js",
+			"export default const",
+			"export default ",
+			"Analytics",
+			"analytics",
+			"Analytics",
+			"console",
+			"consol",
+			"setState",
+			"onChange",
+			"promptToSignupForBeta",
+			"onChange",
+			"}\n",
+			"if (promptToSignupForBeta(event)) {return;}",
+			"salert",
+			"salwer",
+			"like",
+			"sAlert.info",
+			"promptToSignupForBeta",
+			"onChange",
+			"promptToSignupForBeta",
+			"alert",
+			"manualControls",
+			"Analytics.event",
+			"watched",
+			"isReplying",
+			"console",
+			"comment",
+			"Comment",
+			"repliesCount",
+			"isReplying",
+			"console.log",
+			"notification.actor_ids",
+			"actor_ids",
+			"COMMENT_REPLY_TYPE",
+			"comment_id",
+			"omment_id = CommentReplies.findOne(reply_id, { fields: { comment_id: 1 } }).c",
+			"Type",
+			"actor",
+			"extraFilter",
+			"filter",
+			"target_id",
+			"extraFilter",
+			"type",
+			"teor.call('removeNotification', R",
+			"or.call('removeNotification', ",
+			"l('removeNotification',",
+			"COMMENT_REPLY_TYPE",
+			"actor_id",
+			"otherDisplay",
+			"addText",
+			"getContent",
+			"redirectPath",
+			"name: true,",
+			"otherDisplay",
+			"getContent",
+			"content",
+			"uids",
+			"reply",
+			"comment",
+			"LIKE_COMMENT_TYPE",
+			"addText",
+			"length",
+			"target_id",
+			"vid",
+			"_debug",
+			"componentWillUnmount",
+			"self.setState({dropdownOpen: true",
+			"comment.uid",
+			"$ne",
+			"or.call('create",
+			"target_id",
+			"comment_id",
+			"target_id",
+			"all('createNo",
+			"LIKE_COMMENT_TYPE",
+			"createNotification",
+			" =",
+			"uid",
+			"filter",
+			"uniq_uids",
+			" =",
+			"target_id",
+			"3002",
+			"post",
+			"uids",
+			"comment",
+			"Videos",
+			"Comments",
+			"video",
+			"update",
+			"filter",
+			"video"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"analytics.js",
+			"analyics.js",
+			"cascadeUpdateFromUserToDocuments",
+			"onClick={showWaitlisted}",
+			"Recommended",
+			"FlowRouter.go('videosFeed')",
+			"FlowRouter.go('",
+			"oncanplay",
+			"Router.go('/",
+			"FlowRouter.go('/'",
+			" FlowRouter.go('",
+			"device",
+			"www.mettavr.com",
+			"Analytics",
+			"{{> ",
+			"subscriptionsCount",
+			"subscriptions",
+			"Join the waiting list",
+			"Player360",
+			"360Player",
+			"signupAuth",
+			"-webkit-font-smoothing: antialiased;\n-moz-osx-font-smoothing: grayscale;",
+			"54.88.247.133",
+			"://ec2-54-88-247-133.compute-1.amazonaws.com",
+			"ec2-52-90-92-77.compute-1.amazonaws.com",
+			"52.90.92.77",
+			"://ec2-52-90-92-77.compute-1.amazonaws.com/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"default_dir": "/Users/guigou/Hackathon",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".meteor/packages",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1104,
+								1124
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "49cf46b9",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/router.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							],
+							[
+								199,
+								199
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "fb7f32f9",
+							"spell_check": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "markdown",
+							"buffer_scroll_name": "d793be7b",
+							"spell_check": false,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "ed7f35f0",
+							"spell_check": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "node_modules/react-mounter/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1204,
+								1204
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "json",
+							"buffer_scroll_name": "94b45f22",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 521.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "client/modules/Layout.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1331,
+								1331
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "ad713e82",
+							"spell_check": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								123
+							]
+						],
+						"settings":
+						{
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "3fe1a59a",
+							"spell_check": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "hack.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"jas",
+				"tests/jasmine/server/integration/sample/src/Song.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"@alert-padding"
+			]
+		],
+		"width": 452.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
