@@ -11,17 +11,17 @@ import reactMixin from 'react-mixin';
  */
 export default class GettingReady extends Component {
   getMeteorData() {
-
-    Meteor.subscribe('usersWaitingForVideo');
+    const videoId = this.props._id;
+    Meteor.subscribe('usersWaitingForVideo', videoId);
     return {
-      users: Users.find({waitingForVideo: true}).fetch(),
+      users: Users.find({waitingForVideo: videoId}).fetch(),
     }
   }
   render() {
     const users = this.data.users;
     return <div>
       {users.map((user) => {
-        return <userGettingReady {...user} key={user._id}/>
+        return <UserGettingReady {...user} key={user._id}/>
       })}
     </div>
   }
@@ -31,13 +31,13 @@ reactMixin(GettingReady.prototype, ReactMeteorData);
 /*
  * display one user waiting for the video to start
  */
-class userGettingReady extends Component {
+class UserGettingReady extends Component {
   render() {
-    const {name, picture, status} = this.props;
+    const {name, picture, status, emails} = this.props;
     return <div>
       <img src={picture}/>
-      <div className="name">{name}</div>
-      <div className="status">{status}</div>
+      <div className="name" key={0}>{emails[0].address}</div>
+      <div className="status" key={1}>{status}</div>
     </div>
   }
 }
