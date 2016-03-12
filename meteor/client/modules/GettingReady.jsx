@@ -5,6 +5,8 @@
 import React, {Component} from 'react';
 import {ReactMeteorData} from 'meteor/react-meteor-data';
 import reactMixin from 'react-mixin';
+import flowHelpers from '../lib/flowHelper.js';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 /*
  * The UI for people to wait for other to be ready
@@ -12,7 +14,13 @@ import reactMixin from 'react-mixin';
 export default class GettingReady extends Component {
   getMeteorData() {
     const videoId = this.props._id;
-    Meteor.subscribe('userscurrentVideo', videoId);
+    Meteor.subscribe('video', videoId);
+    const video = Videos.findOne(videoId);
+    if (video && video.isPlaying) {
+      FlowRouter.go('videoPlayer', {_id: videoId});
+      return {users: []};
+    }
+    Meteor.subscribe('usersOnVideo', videoId);
     return {
       users: Users.find({currentVideo: videoId}).fetch(),
     }
@@ -29,8 +37,7 @@ export default class GettingReady extends Component {
     </div>
   }
   startVideo() {
-    //TODO
-    window.alert('should start video');
+    Meteor.call('videoStarts', this.props._id);
   }
 }
 reactMixin(GettingReady.prototype, ReactMeteorData);

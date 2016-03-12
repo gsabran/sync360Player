@@ -11,10 +11,12 @@ Meteor.methods({
   unwaitForVideo: function() {
     Users.update({_id: Meteor.userId()}, {$unset: {status: 1, currentVideo: 1}});
   },
+  videoStarts: function(videoId) {
+    Videos.update({_id: videoId}, {$set: {isPlaying: true}});
+  },
   changeReadyState: function() {
     const userId = Meteor.userId();
     const user = Users.findOne(userId);
-    console.log('user', user);
     Users.update({_id: userId}, {$set: {isReady: !user.isReady}});
   },
 })

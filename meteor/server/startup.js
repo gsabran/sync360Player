@@ -6,4 +6,5 @@ Meteor.startup(function () {
       url: "https://s3.amazonaws.com/mettavr/dev/example.mp4",
       preview: "https://s3.amazonaws.com/mettavr/dev/example.png",
     });
+  Videos.update({}, {$set: {isPlaying: false}}, {multi: true});
 });

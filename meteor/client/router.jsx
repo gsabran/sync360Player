@@ -22,3 +22,12 @@ FlowRouter.route('/video/:_id', {
   },
 });
 
+import VideoPlayer from './modules/VideoPlayer.jsx';
+FlowRouter.route('/play/:_id', {
+  name: 'videoPlayer',
+  action: function() {
+    const videoId = FlowRouter.getParam('_id');
+    mount(Layout, {content: () => (<VideoPlayer _id={videoId}/> )});
+  },
+});
+
