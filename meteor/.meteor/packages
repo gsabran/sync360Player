@@ -25,3 +25,4 @@ accounts-password
 accounts-google
 accounts-facebook
 accounts-twitter
+joncursi:socket-io-client
