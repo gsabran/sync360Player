@@ -13,14 +13,17 @@ import ReactDOM from 'react-dom';
 /*
  * The UI for people to wait for other to be ready
  */
-export default class GettingReady extends Component {
+export default class VideoContainer extends Component {
   getMeteorData() {
     const videoId = this.props._id;
     Meteor.subscribe('video', videoId);
-    Meteor.subscribe('usersOnVideo', videoId);
+    const handle = Meteor.subscribe('usersOnVideo', videoId);
+    const video = Videos.findOne(videoId);
+    if (handle.ready() && !video)
+      FlowRouter.go('default');
     return {
       users: Users.find({currentVideo: videoId}).fetch(),
-      video: Videos.findOne(videoId),
+      video: video,
     }
   }
   render() {
@@ -34,7 +37,7 @@ export default class GettingReady extends Component {
         return <div>
           {users.map((user) => {
             allAreReady = allAreReady && user.isReady;
-            return <UserGettingReady {...user} key={user._id}/>
+            return <UserVideoContainer {...user} key={user._id}/>
           })}
           {allAreReady && <div className="go" onClick={this.startVideo.bind(this)}>Go!</div>}
         </div>
@@ -60,12 +63,12 @@ export default class GettingReady extends Component {
     Meteor.call('videoStarts', this.props._id);
   }
 }
-reactMixin(GettingReady.prototype, ReactMeteorData);
+reactMixin(VideoContainer.prototype, ReactMeteorData);
 
 /*
  * display one user waiting for the video to start
  */
-class UserGettingReady extends Component {
+class UserVideoContainer extends Component {
   render() {
     const {name, picture, isReady, emails, _id} = this.props;
 

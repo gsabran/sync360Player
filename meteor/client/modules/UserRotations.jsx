@@ -21,7 +21,7 @@ export default class UserRotations extends Component {
     const users = this.data.users;
     return <div>
       {users.map((user) => {
-        return <UserGettingReady {...user} key={user._id}/>
+        return <UserVideoContainer {...user} key={user._id}/>
       })}
     </div>
   }

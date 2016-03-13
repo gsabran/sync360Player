@@ -1,2 +1,3 @@
 node_modules
 meteor/public/videos
+!meteor/public/videos/videos/example2.mp4

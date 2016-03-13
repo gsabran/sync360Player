@@ -12,12 +12,12 @@ FlowRouter.route('/', {
   },
 });
 
-import GettingReady from './modules/GettingReady.jsx';
+import VideoContainer from './modules/VideoContainer.jsx';
 FlowRouter.route('/video/:_id', {
   name: 'video',
   action: function() {
     const videoId = FlowRouter.getParam('_id');
     Meteor.call('waitForVideo', videoId);
-    mount(Layout, {content: () => (<GettingReady _id={videoId}/> )});
+    mount(Layout, {content: () => (<VideoContainer _id={videoId}/> )});
   },
 });
