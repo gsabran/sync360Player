@@ -35,7 +35,7 @@ export default class VideoContainer extends Component {
 
     const mainContent = () => {
       if (video && video.isPlaying) {
-        return <VideoPlayer _id={this.props._id} />
+        return <VideoPlayer _id={this.props._id} users={users} />
       } else {
         return <div>
           {users.map((user) => {
@@ -87,6 +87,41 @@ export default class VideoContainer extends Component {
   }
   componentDidUpdate() {
     this.load();
+  }
+  componentDidMount() {
+    console.log('setting the voice connection: ');
+    navigator.getUserMedia = ( navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia ||
+                            navigator.msGetUserMedia );
+    
+    navigator.getUserMedia({audio:true, video: false}, function (stream) {
+        window.localStream = stream;
+      },
+      function (error) { console.log(error); }
+    );
+
+    window.peer = new Peer({
+      key: 'xhqzn5eqpuys0pb9',  // get a free key at http://peerjs.com/peerserver
+      debug: 3,
+      config: {'iceServers': [
+        { url: 'stun:stun.l.google.com:19302' },
+        { url: 'stun:stun1.l.google.com:19302' },
+      ]}
+    });
+
+    peer.on('open', function () {
+      console.log('peerId: ' + peer.id);
+      Meteor.call('registerForVideoVoiceChat', peer.id); 
+    });
+
+    peer.on('call', function (incomingCall) {
+      window.currentCall = incomingCall;
+      incomingCall.answer(window.localStream);
+      incomingCall.on('stream', function (remoteStream) {
+        window.remoteStream = remoteStream;
+      });
+    });
   }
   startVideo() {
     Meteor.call('videoStarts', this.props._id);
