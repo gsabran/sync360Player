@@ -71,6 +71,11 @@ export default class VideoPlayer extends Component {
     var rotationsData = this.state;
     return <div>
       <a-scene stats="true">
+        <a-assets>
+          <a-asset-item id="model-mtl" src="/models/Model.mtl"></a-asset-item>
+          <a-asset-item id="model-obj" src="/models/Model.obj"></a-asset-item>
+        </a-assets>
+
         <a-camera position="0 0 0" wasd-controls-enabled="false" ref="camera">
         </a-camera>
 
@@ -80,6 +85,11 @@ export default class VideoPlayer extends Component {
                       segmentsWidth: 64;
                       segmentsHeight: 64;" material="shader: flat; src: #video" scale="-1 1 1">
         </a-entity>    
+
+        <a-obj-model position="0 0 -3" rotation="180 30 0"
+                       scale="1.4 1.4 1.4"src="#model-obj" mtl="#model-mtl"></a-obj-model>
+
+
         {Object.keys(rotationsData).map(function(userId) {
           const rotationData = rotationsData[userId];
           if (!rotationData)
