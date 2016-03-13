@@ -47,14 +47,14 @@ export default class VideoContainer extends Component {
       }
     }
 
-    return <div className="videoContainer">
+    return <div className="videoContainer" onClick={this.load.bind(this)}>
       <video width="1000" height="500" loop="true" crossOrigin="anonymous" id="video" controls="" ref="video" style={{display: 'none'}}>
         <source src={video && video.url} type="video/mp4"/>
       </video>
         {mainContent()}
       </div>
   }
-  componentDidUpdate() {
+  load() {
     const {video} = this.data;
 
     // the data has not been loaded yet
@@ -65,11 +65,28 @@ export default class VideoContainer extends Component {
     if (video.isPlaying) {
       if (videoDom && videoDom.paused)
         videoDom.play();
+      if (this.forcePause) {
+        clearInterval(this.forcePause);
+        videoDom.muted = false;
+        this.forcePause = null;
+      }
+      return;
     }
     if (!this.isLoading) {
       this.isLoading = true;
       videoDom.load();
     }
+    if (!this.forcePause) {
+      const self = this;
+      videoDom.play();
+      this.forcePause = setInterval(function() {
+        videoDom.currentTime = 0;
+        videoDom.muted = true;
+      }, 1);
+    }
+  }
+  componentDidUpdate() {
+    this.load();
   }
   startVideo() {
     Meteor.call('videoStarts', this.props._id);
