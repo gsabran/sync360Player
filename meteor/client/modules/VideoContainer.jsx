@@ -23,7 +23,7 @@ export default class VideoContainer extends Component {
     // the video has been deleted
     if (handle.ready() && !video)
       FlowRouter.go('default');
-    
+
     return {
       users: Users.find({currentVideo: videoId}).fetch(),
       video: video,
@@ -56,10 +56,19 @@ export default class VideoContainer extends Component {
   }
   componentDidUpdate() {
     const {video} = this.data;
-    if (video && video.isPlaying) {
-      const videoDom = ReactDOM.findDOMNode(this.refs.video);
+
+    // the data has not been loaded yet
+    if (!video)
+      return;
+
+    const videoDom = ReactDOM.findDOMNode(this.refs.video);
+    if (video.isPlaying) {
       if (videoDom && videoDom.paused)
         videoDom.play();
+    }
+    if (!this.isLoading) {
+      this.isLoading = true;
+      videoDom.load();
     }
   }
   startVideo() {
