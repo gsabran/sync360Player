@@ -15,8 +15,7 @@ export default class Default extends Component {
     }
   }
   render() {
-    return <div>
-      I'm done with react :)
+    return <div className="container">
       {this.data.videos.map((video) => {
         return <VideoPreview {...video} key={video._id}/>
       })}

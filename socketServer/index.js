@@ -25,6 +25,7 @@ var removeSocket = function (socket) {
 
 var brodacastRemoval = function(removedSocket) {
   var data = socketToData[removedSocket.id];
+  if (!data) return;
   for (var k in videoIdToSockets[data.videoId]) {
     var socket = videoIdToSockets[data.videoId][k].socket;
     if (socket !== removedSocket) {

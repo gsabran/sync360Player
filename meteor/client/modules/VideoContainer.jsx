@@ -38,11 +38,15 @@ export default class VideoContainer extends Component {
         return <VideoPlayer _id={this.props._id} users={users} />
       } else {
         return <div>
-          {users.map((user) => {
-            allAreReady = allAreReady && user.isReady;
-            return <UserVideoContainer {...user} key={user._id}/>
-          })}
-          {allAreReady && <div className="go" onClick={this.startVideo.bind(this)}>Go!</div>}
+          <table>
+            <tbody>
+              {users.map((user) => {
+                allAreReady = allAreReady && user.isReady;
+                return <UserVideoContainer {...user} key={user._id}/>
+              })}
+            </tbody>
+          </table>
+          {allAreReady && <div className="go"><div className="btn btn-success" onClick={this.startVideo.bind(this)}>Go!</div></div>}
         </div>
       }
     }
@@ -136,14 +140,14 @@ class UserVideoContainer extends Component {
   render() {
     const {name, picture, isReady, emails, _id} = this.props;
 
-    return <div>
-      <img src={picture}/>
-      <div className="name" key={0}>{emails[0].address}</div>
-      <div className="status" key={1}>{isReady ? 'ready' : 'not ready'}</div>
+    return <tr className="userPreview">
+      <td><img src={picture}/></td>
+      <td className="name" key={0}>{emails[0].address}</td>
+      <td className="status" key={1}>{isReady ? 'ready' : 'not ready'}</td>
       {_id === Meteor.userId() &&
-        <div className="button" key={2} onClick={this.changeReadyState.bind(this)}>{isReady ? 'Wait, I\'m not ready!' : 'I\'m ready to go'}</div>
+        <td className="button btn btn-primary" key={2} onClick={this.changeReadyState.bind(this)}>{isReady ? 'Wait, I\'m not ready!' : 'I\'m ready to go'}</td>
       }
-    </div>
+    </tr>
   }
   changeReadyState() {
     Meteor.call('changeReadyState', this.props._id);
