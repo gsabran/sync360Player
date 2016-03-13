@@ -1,0 +1,51 @@
+#### can let this run and in another terminal:
+
+ssh -i ~/.ssh/hackathon.pem ubuntu@54.183.177.212
+
+##### in remote server
+## update packages references
+sudo apt-get update
+# install git
+sudo apt-get -y install git
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=36000000'
+
+
+git clone https://github.com/gsabran/sync360Player.git
+## enter github credentials once
+
+## make sure credentials have been cached, and change branch
+cd sync360Player
+git fetch
+
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# create script to restart server
+cd ~
+
+cat > restart.sh
+#!/bin/bash
+cd
+cd sync360Player
+git fetch origin
+git checkout origin/prod_master
+cd socketServer
+npm install
+killall -KILL node
+node index.js </dev/null &>/dev/null &
+
+## (ctrl + c to save)
+chmod u+x restart.sh 
+  
+
+
+
+## follow the ip related things from here: http://www.lauradhamilton.com/how-to-set-up-a-nodejs-web-server-on-amazon-ec2:
+
+sudo sed -i -e 's/.*net\.ipv4\.ip_forward.*/net\.ipv4\.ip_forward=1/g' /etc/sysctl.conf
+sudo sysctl -p /etc/sysctl.conf
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+sudo iptables -A INPUT -p tcp -m tcp --sport 80 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp -m tcp --dport 80 -j ACCEPT
+
