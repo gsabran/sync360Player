@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import aframe from 'aframe';
 import ReactDOM from 'react-dom';
-import {angleToPosition, interpolate} from '../lib/positionHelper.js';
+import {angleToPosition, interpolate, getPointsDistance, getCapedRotation} from '../lib/positionHelper.js';
 import {Socket} from '../lib/socketManager.js';
 
 
@@ -24,6 +24,8 @@ export default class VideoPlayer extends Component {
     // no change
     if (this.socket && this.rotation && this.rotation.x === rotation.x && this.rotation.y === rotation.y)
       return;
+
+    this.setState({rotation});
 
     if (this.socket) {
       this.socket.emit('setRotation', rotation);
@@ -69,6 +71,17 @@ export default class VideoPlayer extends Component {
 
   render () {
     var rotationsData = this.state;
+    const vfov = 80 - 10; // -10 to keep things visible and not just on the border
+    const aspect = 1.0 * window.innerWidth / window.innerHeight;
+    const hfov = 2 * Math.atan( Math.tan( vfov * Math.PI / 180 / 2 ) * aspect ) * 180 / Math.PI;
+
+    // convert position to string
+    const getPos = (position) => {
+      return position.x + " " + position.y + " " + position.z;
+    }
+
+    const cameraRotation = this.rotation;
+
     return <div>
       <a-scene stats="true">
         <a-assets>
@@ -91,16 +104,21 @@ export default class VideoPlayer extends Component {
 
 
         {Object.keys(rotationsData).map(function(userId) {
+          if (userId === 'rotation')
+            return;
+
           const rotationData = rotationsData[userId];
           if (!rotationData)
             return null;
 
-          const position = angleToPosition(5, rotationData);
-          const thepos = String(position.x) + " " + String(position.y) + " " + String(position.z);
-          return <a-cube position={thepos} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube>
+          const newRotation = getCapedRotation(cameraRotation, rotationData, vfov, hfov) || rotationData;
+          const distance = getPointsDistance(newRotation, rotationData);
+          const position = angleToPosition(5 * (1 + distance), newRotation);
+          return <a-cube position={getPos(position)} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube>
         })}
-
     </a-scene>
     </div>
+  }
+  componentDidUpdate() {
   }
 }
