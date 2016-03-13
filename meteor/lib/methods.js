@@ -13,11 +13,15 @@ Meteor.methods({
 
   },
   videoStarts: function(videoId) {
-    Videos.update({_id: videoId}, {$set: {isPlaying: true}});
+    Videos.update({_id: videoId}, {$set: {isPlaying: true, masterId: Meteor.userId()}});
   },
   changeReadyState: function() {
     const userId = Meteor.userId();
     const user = Users.findOne(userId);
     Users.update({_id: userId}, {$set: {isReady: !user.isReady}});
   },
+  registerForVideoVoiceChat: function (peerId) {
+  	const userId = Meteor.userId();
+  	Users.update({_id: userId}, {$set: {peerId: peerId}});
+  }
 })

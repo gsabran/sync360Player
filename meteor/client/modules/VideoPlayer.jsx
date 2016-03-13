@@ -66,9 +66,27 @@ export default class VideoPlayer extends Component {
       });
       self.socket = socket;
     });
+
+    // making calls to other users
+    console.log('making calls to other users: ' + this.props.users);
+    for (var user of this.props.users) {  
+      console.log('is user master: ' + this.props.video.masterId);
+      if(this.props.video.masterId === Meteor.userId()) {
+        var outgoingCall = peer.call(user.peedId, window.localStream);
+        window.currentCall = outgoingCall;
+        outgoingCall.on('stream', function (remoteStream) {
+          window.remoteStream = remoteStream;
+          var video = document.getElementById("theirVideo")
+          video.src = URL.createObjectURL(remoteStream);
+        });
+      }
+    }
+
   }
+
   componentWillUnmount() {
     inteval.clearInterval();
+    window.currentCall.close();
   }
 
   render () {

@@ -7,6 +7,6 @@ Meteor.startup(function () {
       url: "/videos/videos/example2.mp4",
       preview: "https://s3.amazonaws.com/mettavr/dev/example.png",
     });
-  Videos.update({}, {$set: {isPlaying: false}}, {multi: true});
+  Videos.update({}, {$set: {isPlaying: false}, $unset: {masterId: 1}}, {multi: true});
   Users.update({}, {$unset: {isReady: 1, currentVideo: 1}}, {multi: true});
 });
