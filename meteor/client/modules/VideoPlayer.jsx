@@ -55,6 +55,11 @@ export default class VideoPlayer extends Component {
         newRotationState[userId] = interpolate(userId, rotation);
         self.setState(newRotationState);
       });
+      socket.on('playerRemoved', function({userId}) {
+        var state = self.state;
+        delete state[userId];
+        self.setState(state);
+      });
       self.socket = socket;
     });
   }
