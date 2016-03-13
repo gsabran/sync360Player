@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {ReactMeteorData} from 'meteor/react-meteor-data';
 import reactMixin from 'react-mixin';
 
-
+const degToRad = Math.PI / 180;
 
 export default class VideoPlayer extends Component {
 	updateRotation() {
@@ -12,34 +12,27 @@ export default class VideoPlayer extends Component {
 		var rotation = myCamera.getAttribute("rotation");
 
 		var radius = 10;
-		x = -radius* Math.cos(rotation.x * Math.PI / 180) * Math.sin(rotation.y* Math.PI / 180)
-	    z = -radius * Math.cos(rotation.x* Math.PI / 180) * Math.cos(rotation.y* Math.PI / 180)
-	    y = radius* Math.sin(rotation.x * Math.PI / 180)
-
-	    rotation.x = x;
-	    rotation.y = y;
-	    rotation.z = z;
+  		x = -radius* Math.cos(rotation.x * degToRad) * Math.sin(rotation.y * degToRad)
+      z = -radius * Math.cos(rotation.x * degToRad) * Math.cos(rotation.y * degToRad)
+      y = radius* Math.sin(rotation.x * degToRad);
 
 		//write to DB
-		Meteor.call("rotationChange",rotation);
-
-
-
+		Meteor.call("rotationChange", {x, y, z});
 	}
 
 	componentDidMount() {
 		var interval = setInterval(this.updateRotation.bind(this), 100);
 	}
 	componentWillUnmount() {
-    	inteval.clearInterval();
+    inteval.clearInterval();
   }
 
 	getMeteorData() {
-	    Meteor.subscribe('usersRotationForVideo');
-	    return {
-	      rotations: Users.find({currentVideo: this.props._id, _id: {$ne: Meteor.userId()}}, {fields: {rotation: 1}} ).fetch(),
-	    }
-	  }
+    Meteor.subscribe('usersRotationForVideo');
+    return {
+      rotations: Users.find({currentVideo: this.props._id, _id: {$ne: Meteor.userId()}}, {fields: {rotation: 1}} ).fetch(),
+    }
+  }
 
   render () {
   	var players = this.data.rotations;
@@ -60,8 +53,10 @@ export default class VideoPlayer extends Component {
 	      </a-entity>    
 
 	      {players.map(function(pos) {
+            if (!pos.rotation)
+              return null;
 	      			var thepos = String(pos.rotation.x) + " " + String(pos.rotation.y) + " " + String(pos.rotation.z)
-                    return <a-cube position={thepos} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8"></a-cube>
+                    return <a-cube position={thepos} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={pos._id}></a-cube>
                   })}
 
     </a-scene>
