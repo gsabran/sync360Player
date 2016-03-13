@@ -123,9 +123,12 @@ export default class VideoPlayer extends Component {
           const distance = getPointsDistance(newRotation, rotationData);
           const position = angleToPosition(5 * (1 + distance), newRotation);
 
-          const modelRotation =  (cameraRotation ? cameraRotation.y : 0);
+          const modelRotation =  (rotationData ? rotationData.y : 0);
 
-          const theRot = getPos({x: 180, y: modelRotation, z: 0});
+          const modelRotationx =  180 + (rotationData ? rotationData.x : 0);
+
+
+          const theRot = getPos({x: modelRotationx, y: modelRotation, z: 0});
 
           if (count == 1) {
           return <a-obj-model position={getPos(position)} rotation={theRot} 
