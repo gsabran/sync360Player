@@ -7,9 +7,6 @@ import {Socket} from '../lib/socketManager.js';
 
 const degToRad = Math.PI / 180;
 
-const count = Math.floor((Math.random() * 4) + 1);
-console.log(count);
-
 export default class VideoPlayer extends Component {
   constructor(props) {
     super(props);
@@ -130,19 +127,24 @@ export default class VideoPlayer extends Component {
 
           const theRot = getPos({x: modelRotationx, y: modelRotation, z: 0});
 
-          if (count == 1) {
+
+          const userEmail = Meteor.users.findOne({"_id":userId}).emails[0].address;
+
+
+
+          if (userEmail == "g@gmail.com") {
           return <a-obj-model position={getPos(position)} rotation={theRot} 
                        scale="3 3 3" src="#g-obj" mtl="#g-mtl" key={userId}></a-obj-model> }
 
-          if (count == 2) {
+          if (userEmail == "b@gmail.com") {
           return <a-obj-model position={getPos(position)} rotation={theRot} 
                        scale="3 3 3" src="#b-obj" mtl="#b-mtl" key={userId}></a-obj-model> }
 
-          if (count == 3) {
+          if (userEmail == "s@gmail.com") {
           return <a-obj-model position={getPos(position)} rotation={theRot} 
                        scale="3 3 3" src="#s-obj" mtl="#s-mtl" key={userId}></a-obj-model> }
 
-          if (count > 3) {
+          else {
           return <a-cube position={getPos(position)} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube> }
         })}
     </a-scene>
