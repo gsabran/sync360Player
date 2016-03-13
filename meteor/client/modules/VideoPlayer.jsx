@@ -65,9 +65,65 @@ export default class VideoPlayer extends Component {
 
   render () {
     var rotationsData = this.state;
+    const vfov = 80;
+    const aspect = 1094.0 / 1402;
+    const hfov = 2 * Math.atan( Math.tan( vfov * Math.PI / 180 / 2 ) * aspect ) * 180 / Math.PI;
+
+    // convert position to string
+    const getPos = (position) => {
+      return position.x + " " + position.y + " " + position.z;
+    }
+
+    const getBorder = () => {
+
+      const rotation = this.rotation;
+      console.log(hfov, vfov, rotation);
+      if (!rotation)
+        return null;
+
+
+      const topLeft = {
+        x: rotation.x + vfov / 2,
+        y: rotation.y + hfov / 2,
+        z: 0,
+      };
+
+      const topRight = {
+        x: rotation.x + vfov / 2,
+        y: rotation.y - hfov / 2,
+        z: 0,
+      };
+
+      const bottomLeft = {
+        x: rotation.x - vfov / 2,
+        y: rotation.y + hfov / 2,
+        z: 0,
+      };
+
+      const bottomRight = {
+        x: rotation.x - vfov / 2,
+        y: rotation.y - hfov / 2,
+        z: 0,
+      };
+
+      const center = {
+        x: rotation.x,
+        y: rotation.y,
+        z: 0,
+      };
+
+      return [
+        <a-cube position={getPos(angleToPosition(5, topLeft))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={0}></a-cube>,
+        <a-cube position={getPos(angleToPosition(5, topRight))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={1}></a-cube>,
+        <a-cube position={getPos(angleToPosition(5, bottomLeft))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={2}></a-cube>,
+        <a-cube position={getPos(angleToPosition(5, bottomRight))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={3}></a-cube>,
+        <a-cube position={getPos(angleToPosition(5, center))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={4}></a-cube>,
+      ]
+    }
+
     return <div>
       <a-scene stats="true">
-        <a-camera position="0 0 0" wasd-controls-enabled="false" ref="camera">
+        <a-camera position="0 0 0" wasd-controls-enabled="true" ref="camera">
         </a-camera>
 
         <a-entity id="vidSphere"
@@ -82,11 +138,12 @@ export default class VideoPlayer extends Component {
             return null;
 
           const position = angleToPosition(5, rotationData);
-          const thepos = String(position.x) + " " + String(position.y) + " " + String(position.z);
-          return <a-cube position={thepos} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube>
+          return <a-cube position={getPos(position)} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube>
         })}
-
+        {getBorder()}
     </a-scene>
     </div>
+  }
+  componentDidUpdate() {
   }
 }
