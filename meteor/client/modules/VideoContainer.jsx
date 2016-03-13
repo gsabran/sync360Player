@@ -19,8 +19,11 @@ export default class VideoContainer extends Component {
     Meteor.subscribe('video', videoId);
     const handle = Meteor.subscribe('usersOnVideo', videoId);
     const video = Videos.findOne(videoId);
+
+    // the video has been deleted
     if (handle.ready() && !video)
       FlowRouter.go('default');
+    
     return {
       users: Users.find({currentVideo: videoId}).fetch(),
       video: video,
