@@ -35,7 +35,8 @@ export default class VideoContainer extends Component {
 
     const mainContent = () => {
       if (video && video.isPlaying) {
-        return <VideoPlayer _id={this.props._id} users={users} />
+        console.log('users', users);
+        return <VideoPlayer _id={this.props._id} users={users} video={video}/>
       } else {
         return <div>
           <table>

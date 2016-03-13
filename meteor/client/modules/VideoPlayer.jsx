@@ -73,8 +73,8 @@ export default class VideoPlayer extends Component {
     // making calls to other users
     console.log('making calls to other users: ' + this.props.users);
     for (var user of this.props.users) {  
-      console.log('is user master: ' + user.masterId);
-      if(user.masterId) {
+      console.log('is user master: ' + this.props.video.masterId);
+      if(this.props.video.masterId === Meteor.userId()) {
         var outgoingCall = peer.call(user.peedId, window.localStream);
         window.currentCall = outgoingCall;
         outgoingCall.on('stream', function (remoteStream) {
