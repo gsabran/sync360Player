@@ -8,6 +8,7 @@ import reactMixin from 'react-mixin';
 import flowHelpers from '../lib/flowHelper.js';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import VideoPlayer from './VideoPlayer.jsx'
+import ReactDOM from 'react-dom';
 
 /*
  * The UI for people to wait for other to be ready
@@ -25,12 +26,10 @@ export default class GettingReady extends Component {
   render() {
     const {users, video} = this.data;
     let allAreReady = true;
-    
+
     const mainContent = () => {
-      if (video) {
-        {
-          return <VideoPlayer _id={this.props._id} />
-        }
+      if (video && video.isPlaying) {
+        return <VideoPlayer _id={this.props._id} />
       } else {
         return <div>
           {users.map((user) => {
@@ -43,11 +42,19 @@ export default class GettingReady extends Component {
     }
 
     return <div className="videoContainer">
-      <video width="1000" height="500" loop="true" crossOrigin="anonymous" id="video" controls="" autoPlay style={{display: 'none'}}>
+      <video width="1000" height="500" loop="true" crossOrigin="anonymous" id="video" controls="" ref="video" style={{display: 'none'}}>
         <source src={video && video.url} type="video/mp4"/>
       </video>
         {mainContent()}
       </div>
+  }
+  componentDidUpdate() {
+    const {video} = this.data;
+    if (video && video.isPlaying) {
+      const videoDom = ReactDOM.findDOMNode(this.refs.video);
+      if (videoDom && videoDom.paused)
+        videoDom.play();
+    }
   }
   startVideo() {
     Meteor.call('videoStarts', this.props._id);
@@ -72,7 +79,6 @@ class UserGettingReady extends Component {
     </div>
   }
   changeReadyState() {
-    console.log('changeReadyState');
     Meteor.call('changeReadyState', this.props._id);
   }
 }
