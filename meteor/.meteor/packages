@@ -27,3 +27,5 @@ accounts-facebook
 accounts-twitter
 accounts-ui
 less
+fds:webrtc
+coffeescript
