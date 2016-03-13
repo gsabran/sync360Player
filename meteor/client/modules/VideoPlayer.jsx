@@ -1,9 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import aframe from 'aframe';
 import ReactDOM from 'react-dom';
-import {ReactMeteorData} from 'meteor/react-meteor-data';
-import reactMixin from 'react-mixin';
-import {angleToPosition} from '../lib/positionHelper.js';
+import {angleToPosition, interpolate} from '../lib/positionHelper.js';
 import {Socket} from '../lib/socketManager.js';
 
 
@@ -13,9 +11,11 @@ export default class VideoPlayer extends Component {
   constructor(props) {
     super(props);
     // state keep track of all known rotations data and of the live socket
-    this.state = {
-    };
+    this.state = {};
   }
+  /*
+   * get the current rotation and broadcast it
+   */
   updateRotation() {
     var myCamera = ReactDOM.findDOMNode(this.refs.camera);
     var rotation = myCamera.getAttribute("rotation");
@@ -30,9 +30,21 @@ export default class VideoPlayer extends Component {
       this.rotation = rotation;
     }
   }
-
+  /*
+   * get a smooth version of all the positions from other users
+   */
+  updateRotations() {
+    const newState = {};
+    for (var k in this.state) {
+      const pos = interpolate(k);
+      if (pos)
+        newState[k] = pos;
+    }
+    this.setState(newState);
+  }
   componentDidMount() {
-    var interval = setInterval(this.updateRotation.bind(this), 5);
+    var interval = setInterval(this.updateRotation.bind(this), 100);
+    var interval = setInterval(this.updateRotations.bind(this), 30);
     const userId = Meteor.userId();
     const videoId = this.props._id;
     var self = this;
@@ -40,8 +52,7 @@ export default class VideoPlayer extends Component {
       socket.emit('auth', videoId, userId);
       socket.on('rotation', function({userId, rotation}) {
         var newRotationState = {};
-        newRotationState[userId] = rotation;
-        window.rotation = rotation;
+        newRotationState[userId] = interpolate(userId, rotation);
         self.setState(newRotationState);
       });
       self.socket = socket;
@@ -52,17 +63,8 @@ export default class VideoPlayer extends Component {
     inteval.clearInterval();
   }
 
-  getMeteorData() {
-    Meteor.subscribe('usersRotationForVideo');
-    return {
-      rotations: Rotations.find({videoId: this.props._id, userId: {$ne: Meteor.userId()}}).fetch(),
-    }
-  }
-
   render () {
     var rotationsData = this.state;
-
-    window.rotationsData = rotationsData;
     return <div>
       <a-scene stats="true">
         <a-camera position="0 0 0" wasd-controls-enabled="false" ref="camera">
@@ -88,5 +90,3 @@ export default class VideoPlayer extends Component {
     </div>
   }
 }
-
-reactMixin(VideoPlayer.prototype, ReactMeteorData);
