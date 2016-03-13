@@ -7,6 +7,9 @@ import {Socket} from '../lib/socketManager.js';
 
 const degToRad = Math.PI / 180;
 
+const count = Math.floor((Math.random() * 4) + 1);
+console.log(count);
+
 export default class VideoPlayer extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +48,8 @@ export default class VideoPlayer extends Component {
     this.setState(newState);
   }
   componentDidMount() {
+
+
     var interval = setInterval(this.updateRotation.bind(this), 100);
     var interval = setInterval(this.updateRotations.bind(this), 30);
     const userId = Meteor.userId();
@@ -85,8 +90,12 @@ export default class VideoPlayer extends Component {
     return <div>
       <a-scene stats="true">
         <a-assets>
-          <a-asset-item id="model-mtl" src="/models/Model.mtl"></a-asset-item>
-          <a-asset-item id="model-obj" src="/models/Model.obj"></a-asset-item>
+          <a-asset-item id="g-mtl" src="/models/g.mtl"></a-asset-item>
+          <a-asset-item id="g-obj" src="/models/g.obj"></a-asset-item>
+          <a-asset-item id="b-mtl" src="/models/b.mtl"></a-asset-item>
+          <a-asset-item id="b-obj" src="/models/b.obj"></a-asset-item>
+          <a-asset-item id="s-mtl" src="/models/s.mtl"></a-asset-item>
+          <a-asset-item id="s-obj" src="/models/s.obj"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" wasd-controls-enabled="false" ref="camera">
@@ -97,10 +106,7 @@ export default class VideoPlayer extends Component {
                       radius: 5000;
                       segmentsWidth: 64;
                       segmentsHeight: 64;" material="shader: flat; src: #video" scale="-1 1 1">
-        </a-entity>    
-
-        <a-obj-model position="0 0 -3" rotation="180 30 0"
-                       scale="1.4 1.4 1.4"src="#model-obj" mtl="#model-mtl"></a-obj-model>
+        </a-entity>  
 
 
         {Object.keys(rotationsData).map(function(userId) {
@@ -114,7 +120,22 @@ export default class VideoPlayer extends Component {
           const newRotation = getCapedRotation(cameraRotation, rotationData, vfov, hfov) || rotationData;
           const distance = getPointsDistance(newRotation, rotationData);
           const position = angleToPosition(5 * (1 + distance), newRotation);
-          return <a-cube position={getPos(position)} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube>
+
+
+          if (count == 1) {
+          return <a-obj-model position={getPos(position)} rotation="180 0 0"
+                       scale="3 3 3" src="#g-obj" mtl="#g-mtl" key={userId}></a-obj-model> }
+
+          if (count == 2) {
+          return <a-obj-model position={getPos(position)} rotation="180 0 0"
+                       scale="3 3 3" src="#b-obj" mtl="#b-mtl" key={userId}></a-obj-model> }
+
+          if (count == 3) {
+          return <a-obj-model position={getPos(position)} rotation="180 0 0"
+                       scale="3 3 3" src="#s-obj" mtl="#s-mtl" key={userId}></a-obj-model> }
+
+          if (count > 3) {
+          return <a-cube position={getPos(position)} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={userId}></a-cube> }
         })}
     </a-scene>
     </div>
