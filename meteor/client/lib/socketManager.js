@@ -12,6 +12,6 @@ export const Socket = {
   	return '3002';
   },
   getRotationServerIPAddress: function() {
-  	return 'localhost';
+  	return '192.168.43.12';
   }
 };
