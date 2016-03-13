@@ -75,12 +75,14 @@ export default class VideoPlayer extends Component {
     for (var user of this.props.users) {  
       console.log('is user master: ' + this.props.video.masterId);
       if(this.props.video.masterId === Meteor.userId()) {
-        var outgoingCall = peer.call(user.peedId, window.localStream);
+        console.log('caller: ' + Meteor.userId());
+        console.log('callee: ' + Meteor.user.peerId);        
+        var outgoingCall = peer.call(user.peerId, window.localStream);
         window.currentCall = outgoingCall;
         outgoingCall.on('stream', function (remoteStream) {
+          console.log('outgoingCall: ' + outgoingCall);
+          console.log('remoteStream: ' + remoteStream);
           window.remoteStream = remoteStream;
-          var video = document.getElementById("theirVideo")
-          video.src = URL.createObjectURL(remoteStream);
         });
       }
     }
