@@ -11,6 +11,7 @@ var socketToData = {};
 
 // once a socket is over, remove its references
 var removeSocket = function (socket) {
+  brodacastRemoval(socket);
   var data = socketToData[socket.id];
   if (!data)
     return;
@@ -21,6 +22,18 @@ var removeSocket = function (socket) {
   if (idx !== -1)
     videoIdToSockets[videoId].splice(idx, 1);
 };
+
+var brodacastRemoval = function(removedSocket) {
+  var data = socketToData[removedSocket.id];
+  for (var k in videoIdToSockets[data.videoId]) {
+    var socket = videoIdToSockets[data.videoId][k].socket;
+    if (socket !== removedSocket) {
+      socket.emit('playerRemoved', {
+        userId: data.userId,
+      });
+    }
+  }
+}
 
 var broadcastRotation = function(data) {
   for (var k in videoIdToSockets[data.videoId]) {
