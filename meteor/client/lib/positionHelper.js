@@ -56,3 +56,17 @@ export const interpolate = (key, position=null) => {
   _lastPositions[key] = lastPosition;
   return interpolate(key);
 }
+
+export const getPointsDistance = (a, b, R=1) => {
+  var φ1 = a.x * degToRad;
+  var φ2 = b.x * degToRad;
+  var Δφ = (b.x-a.x) * degToRad;
+  var Δλ = (a.y-b.y) * degToRad;
+
+  var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+          Math.cos(φ1) * Math.cos(φ2) *
+          Math.sin(Δλ/2) * Math.sin(Δλ/2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+  return R * c;
+};
