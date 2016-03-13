@@ -91,6 +91,6 @@ io.on('connection', function(socket) {
   });
 });
 
-var port = 3002;
+var port = 8080;
 server.listen(port, function() {
 });

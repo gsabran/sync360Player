@@ -9,7 +9,7 @@ export const Socket = {
     });
   },
   getRotationServerPort: function() {
-  	return '3002';
+  	return '8080';//
   },
   getRotationServerIPAddress: function() {
   	return 'localhost';
