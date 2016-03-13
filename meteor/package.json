@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "aframe": "git://github.com/aframevr/aframe.git#cc34e7bc4b1a0ec46f209cf297e5c416b82fa70d",
-    "aframe-react": "^1.2.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "invariant": "^2.2.0",
