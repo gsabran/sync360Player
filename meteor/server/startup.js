@@ -1,5 +1,6 @@
 Meteor.startup(function () {
   Videos.remove({});
+  
   if (Videos.find().count() === 0)
     Videos.insert({
       title: "Where's Waldo 360",

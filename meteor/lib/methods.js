@@ -1,7 +1,4 @@
 Meteor.methods({
-  rotationChange: function(rotation) {
-	Users.update({_id: Meteor.userId()}, {$set: {rotation:rotation}})
-  },
   waitForVideo: function(videoId) {
     Users.update({_id: Meteor.userId()}, {$set: {isReady: false, currentVideo: videoId}})
   },

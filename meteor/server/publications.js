@@ -1,7 +1,3 @@
-Meteor.publish('usersRotationForVideo', function(videoId) {
-  return Users.find({currentVideo: videoId});
-});
-
 Meteor.publish('usersOnVideo', function(videoId) {
   return Users.find({currentVideo: videoId});
 });

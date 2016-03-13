@@ -25,6 +25,7 @@ export default class Layout extends Component {
     return <div>
       <header>
         <Account />
+        <a href="/">home</a>
       </header>
       {content()}
     </div>

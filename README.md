@@ -13,4 +13,12 @@ npm install
 meteor
 ```
 
+## Socket
+
+```
+cd socketServer
+npm install
+node index.js
+```
+
 go to `localhost:3000`
