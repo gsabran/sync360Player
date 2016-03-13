@@ -7,6 +7,7 @@ import {ReactMeteorData} from 'meteor/react-meteor-data';
 import reactMixin from 'react-mixin';
 import flowHelpers from '../lib/flowHelper.js';
 import {FlowRouter} from 'meteor/kadira:flow-router';
+import VideoPlayer from './VideoPlayer.jsx'
 
 /*
  * The UI for people to wait for other to be ready
@@ -27,8 +28,11 @@ export default class GettingReady extends Component {
     
     const mainContent = () => {
       console.log('video', video);
-      if (video && video.isPlaying) {
-        {/* Video thing goes here */}
+      if (video) {
+        {
+          console.log("helloooo");
+          return <VideoPlayer _id={this.props._id} />
+        }
       } else {
         return <div>
           {users.map((user) => {
@@ -41,7 +45,7 @@ export default class GettingReady extends Component {
     }
 
     return <div className="videoContainer">
-      <video>
+      <video width="1000" height="500" loop="true" crossOrigin="anonymous" id="video" controls="" autoPlay style={{display: 'none'}}>
         <source src={video && video.url} type="video/mp4"/>
       </video>
         {mainContent()}

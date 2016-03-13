@@ -11,6 +11,19 @@ export default class VideoPlayer extends Component {
 		var myCamera = ReactDOM.findDOMNode(this.refs.camera);
 		var rotation = myCamera.getAttribute("rotation");
 
+
+		rotation.z = -5;
+
+
+
+
+		x = Math.sin(rotation.x * 2 * Math.pi / 360) * Math.cos(rotation.y)
+	    z = Math.sin(rotation.x) * Math.sin(rotation.y)
+	    y = Math.cos(rotation.x)
+
+    v = c4d.Vector(x, y, z)
+    v = v * altid + v * rad
+
 		//write to DB
 		Meteor.call("rotationChange",rotation);
 
@@ -34,6 +47,7 @@ export default class VideoPlayer extends Component {
 
   render () {
   	var players = this.data.rotations;
+
   	//parse through
 
 
@@ -41,7 +55,7 @@ export default class VideoPlayer extends Component {
     return (
 	<div>
      <a-scene stats="true">
-	     <a-camera onChange={this.updateRotation} position="0 1.8 4" wasd-controls-enabled="false" ref="camera">
+	     <a-camera position="0 1.8 4" wasd-controls-enabled="false" ref="camera">
 	     </a-camera>
 
 	      <a-entity id="vidSphere"
