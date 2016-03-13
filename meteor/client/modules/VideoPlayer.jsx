@@ -48,7 +48,7 @@ export default class VideoPlayer extends Component {
     const userId = Meteor.userId();
     const videoId = this.props._id;
     var self = this;
-    Socket.create(function(socket) {
+    Socket.create(Socket.getRotationServerIPAddress(),Socket.getRotationServerPort(), function(socket) {
       socket.emit('auth', videoId, userId);
       socket.on('rotation', function({userId, rotation}) {
         var newRotationState = {};
@@ -57,7 +57,6 @@ export default class VideoPlayer extends Component {
       });
       self.socket = socket;
     });
-
   }
   componentWillUnmount() {
     inteval.clearInterval();
