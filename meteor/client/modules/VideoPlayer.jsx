@@ -66,7 +66,7 @@ export default class VideoPlayer extends Component {
   render () {
     var rotationsData = this.state;
     const vfov = 80;
-    const aspect = 1094.0 / 1402;
+    const aspect = 1094.0 / 1402;//1.0 * window.innerHeight / window.innerWidth;
     const hfov = 2 * Math.atan( Math.tan( vfov * Math.PI / 180 / 2 ) * aspect ) * 180 / Math.PI;
 
     // convert position to string
@@ -77,9 +77,72 @@ export default class VideoPlayer extends Component {
     const getBorder = () => {
 
       const rotation = this.rotation;
-      console.log(hfov, vfov, rotation);
       if (!rotation)
         return null;
+
+      // give the angle corresponding to @rot between @min and @max
+      const inBetween = (rot, min, max) => {
+        while (rot > max) {
+          rot -= max - min;
+        }
+        while (rot < min) {
+          rot += max - min;
+        }
+        return rot;
+      }
+
+      rotation.x = inBetween(rotation.x, -90, 90);
+      rotation.y = inBetween(rotation.y, 0, 360);
+
+      // show object that are not in the view in the sides
+      const getCapedRotation = (rot) => {
+        rot.x = inBetween(rot.x, -90, 90);
+        rot.y = inBetween(rot.x, 0, 360);
+        console.log(vfov, hfov, rot.y - rotation.y, rot.x - rotation.x);
+        if (rot.x < rotation.x + vfov / 2 && rot.x > rotation.x - vfov / 2 && (
+          (rot.y < rotation.y + hfov / 2 && rot.y > rotation.y - hfov / 2) ||
+          (rot.y - 360 < rotation.y + hfov / 2 && rot.y - 360 > rotation.y - hfov / 2) ||
+          (rot.y + 360 < rotation.y + hfov / 2 && rot.y + 360 > rotation.y - hfov / 2)
+        )) {
+          // the the object is in the view
+          console.log('in screen');
+          return rot
+        } else if (rot.x > rotation.x + vfov / 2) {
+          // too high
+          console.log('too high');
+
+        } else if (rot.x < rotation.x - vfov / 2) {
+          // too low
+          console.log('too low');
+
+        } else {
+          let minDistance = 360;
+          let closest = null;
+
+          // the left & right borders modulus 360
+          const horizontalBorders = [rotation.y + hfov / 2, rotation.y + hfov / 2 + 360, rotation.y + hfov / 2 - 360, rotation.y - hfov / 2, rotation.y - hfov / 2 + 360, rotation.y - hfov / 2 - 360];
+          console.log(rotation.y, hfov / 2, rot.y)
+          for (var angle of horizontalBorders) {
+            const d = Math.abs(angle - rot.y);
+            if (d < minDistance) {
+              minDistance = d;
+              closest = angle;
+            }
+          }
+          console.log((closest - rotation.y + hfov / 2) % 360, (closest - rotation.y + hfov / 2) % 360 === 0);
+          console.log((closest - rotation.y - hfov / 2) % 360, (closest - rotation.y - hfov / 2) % 360 === 0);
+          if ((closest - rotation.y + hfov / 2) % 360 === 0) {
+            // too on the left
+            console.log('too on the left');
+
+          } else {
+            // too on the right
+            console.log('too on the right');
+
+          }
+        }
+      }
+      getCapedRotation({x: 0, y: 0});
 
 
       const topLeft = {
@@ -118,6 +181,7 @@ export default class VideoPlayer extends Component {
         <a-cube position={getPos(angleToPosition(5, bottomLeft))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={2}></a-cube>,
         <a-cube position={getPos(angleToPosition(5, bottomRight))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={3}></a-cube>,
         <a-cube position={getPos(angleToPosition(5, center))} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8" key={4}></a-cube>,
+        <a-cube position={getPos(angleToPosition(5, {x: 0, y: 0}))} rotation="30 30 0" width="1" depth="1" height="1" color="green" roughness="0.8" key={5}></a-cube>,
       ]
     }
 
