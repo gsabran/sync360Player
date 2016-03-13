@@ -85,6 +85,8 @@ export default class VideoPlayer extends Component {
       return position.x + " " + position.y + " " + position.z;
     }
 
+
+
     const cameraRotation = this.rotation;
 
     return <div>
@@ -121,17 +123,20 @@ export default class VideoPlayer extends Component {
           const distance = getPointsDistance(newRotation, rotationData);
           const position = angleToPosition(5 * (1 + distance), newRotation);
 
+          const modelRotation =  (cameraRotation ? cameraRotation.y : 0);
+
+          const theRot = getPos({x: 180, y: modelRotation, z: 0});
 
           if (count == 1) {
-          return <a-obj-model position={getPos(position)} rotation="180 0 0"
+          return <a-obj-model position={getPos(position)} rotation={theRot} 
                        scale="3 3 3" src="#g-obj" mtl="#g-mtl" key={userId}></a-obj-model> }
 
           if (count == 2) {
-          return <a-obj-model position={getPos(position)} rotation="180 0 0"
+          return <a-obj-model position={getPos(position)} rotation={theRot} 
                        scale="3 3 3" src="#b-obj" mtl="#b-mtl" key={userId}></a-obj-model> }
 
           if (count == 3) {
-          return <a-obj-model position={getPos(position)} rotation="180 0 0"
+          return <a-obj-model position={getPos(position)} rotation={theRot} 
                        scale="3 3 3" src="#s-obj" mtl="#s-mtl" key={userId}></a-obj-model> }
 
           if (count > 3) {
