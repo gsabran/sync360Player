@@ -27,10 +27,8 @@ export default class GettingReady extends Component {
     let allAreReady = true;
     
     const mainContent = () => {
-      console.log('video', video);
       if (video) {
         {
-          console.log("helloooo");
           return <VideoPlayer _id={this.props._id} />
         }
       } else {

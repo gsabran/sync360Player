@@ -11,18 +11,14 @@ export default class VideoPlayer extends Component {
 		var myCamera = ReactDOM.findDOMNode(this.refs.camera);
 		var rotation = myCamera.getAttribute("rotation");
 
+		var radius = 10;
+		x = -radius* Math.cos(rotation.x * Math.PI / 180) * Math.sin(rotation.y* Math.PI / 180)
+	    z = -radius * Math.cos(rotation.x* Math.PI / 180) * Math.cos(rotation.y* Math.PI / 180)
+	    y = radius* Math.sin(rotation.x * Math.PI / 180)
 
-		rotation.z = -5;
-
-
-
-
-		x = Math.sin(rotation.x * 2 * Math.pi / 360) * Math.cos(rotation.y)
-	    z = Math.sin(rotation.x) * Math.sin(rotation.y)
-	    y = Math.cos(rotation.x)
-
-    v = c4d.Vector(x, y, z)
-    v = v * altid + v * rad
+	    rotation.x = x;
+	    rotation.y = y;
+	    rotation.z = z;
 
 		//write to DB
 		Meteor.call("rotationChange",rotation);
@@ -32,7 +28,7 @@ export default class VideoPlayer extends Component {
 	}
 
 	componentDidMount() {
-		var interval = setInterval(this.updateRotation.bind(this), 1000);
+		var interval = setInterval(this.updateRotation.bind(this), 100);
 	}
 	componentWillUnmount() {
     	inteval.clearInterval();
@@ -48,14 +44,12 @@ export default class VideoPlayer extends Component {
   render () {
   	var players = this.data.rotations;
 
-  	//parse through
-
-
-
+  	console.log("players ");
+  	console.log(players);
     return (
 	<div>
      <a-scene stats="true">
-	     <a-camera position="0 1.8 4" wasd-controls-enabled="false" ref="camera">
+	     <a-camera position="0 0 0" wasd-controls-enabled="false" ref="camera">
 	     </a-camera>
 
 	      <a-entity id="vidSphere"
@@ -66,7 +60,8 @@ export default class VideoPlayer extends Component {
 	      </a-entity>    
 
 	      {players.map(function(pos) {
-                    return <a-cube position={pos} rotation="30 30 0" width="2" depth="2" height="2" color="#F16745" roughness="0.8"></a-cube>
+	      			var thepos = String(pos.rotation.x) + " " + String(pos.rotation.y) + " " + String(pos.rotation.z)
+                    return <a-cube position={thepos} rotation="30 30 0" width="1" depth="1" height="1" color="#F16745" roughness="0.8"></a-cube>
                   })}
 
     </a-scene>
