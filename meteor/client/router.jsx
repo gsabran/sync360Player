@@ -21,3 +21,11 @@ FlowRouter.route('/video/:_id', {
     mount(Layout, {content: () => (<VideoContainer _id={videoId}/> )});
   },
 });
+
+FlowRouter.route('/restart', {
+  name: 'restart',
+  action: function() {
+    Meteor.call('restart');
+    FlowRouter.redirect('default');
+  },
+});

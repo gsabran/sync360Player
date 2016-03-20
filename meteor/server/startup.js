@@ -1,4 +1,5 @@
-Meteor.startup(function () {
+
+restart = function() {
   Videos.remove({});
   
   if (Videos.find().count() === 0)
@@ -9,4 +10,8 @@ Meteor.startup(function () {
     });
   Videos.update({}, {$set: {isPlaying: false}, $unset: {masterId: 1}}, {multi: true});
   Users.update({}, {$unset: {isReady: 1, currentVideo: 1}}, {multi: true});
+}
+
+Meteor.startup(function () {
+  restart();
 });
